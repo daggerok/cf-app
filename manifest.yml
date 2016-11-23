@@ -1,0 +1,7 @@
+---
+applications:
+- name: cf-ui
+  memory: 256M
+  diskquota: 56M
+  instances: 2
+  path: ./target/cf-ui-0.0.1.jar
