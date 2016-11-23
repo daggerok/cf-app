@@ -1,0 +1,17 @@
+version: '2'
+services:
+  cf-mysql:
+    container_name: cf-mysql
+    image: mysql:5
+    environment:
+      - MYSQL_ROOT_PASSWORD=cf
+      - MYSQL_PASSWORD=cf
+      - MYSQL_USER=cf
+      - MYSQL_DATABASE=cf
+    ports:
+      - "3306:3306"
+    networks:
+      - backend
+networks:
+  backend:
+    driver: bridge

@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    username: cf
+    password: cf
+    url: jdbc:mysql://localhost/cf?useSSL=false
