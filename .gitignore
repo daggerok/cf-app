@@ -20,6 +20,10 @@ dist/
 nbdist/
 .nb-gradle/
 
+gradle/
+.gradle/
+gradlew*
+
 .mvn
 mvnw*
 target/
