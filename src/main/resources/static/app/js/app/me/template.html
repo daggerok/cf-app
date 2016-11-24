@@ -1,0 +1,19 @@
+<div>
+
+  <h4 class="display-inline-block">hi, {{ $ctrl.principal.name }}!</h4>
+
+  <a href="/login"
+     target="_self"
+  ng-if="!$ctrl.authenticated()">login</a>
+
+
+  <a href="/logout"
+     target="_self"
+     ng-if="$ctrl.authenticated()">logout</a>
+
+  <pre>{{ $ctrl.principal | stringify }}</pre>
+
+  <div ng-if="$ctrl.authenticated()">
+    <env>loading env...</env>
+  </div>
+</div>

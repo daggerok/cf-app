@@ -12,7 +12,8 @@ server:
 security:
   user:
     password: pwd
-  ignored: /css/*.css,/js/*.js
-spring:
-  resources:
-    cache-period: 60
+  ignored: /app/**,/vendors/**,/index,html,/favicon.ico
+#spring:
+#  resources:
+#    cache-period: 60
+debug: true

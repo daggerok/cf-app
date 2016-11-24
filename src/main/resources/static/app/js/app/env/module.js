@@ -1,7 +1,8 @@
 /**
  * env module
  */
-(function boot() {
+
+(function env() {
   'use strict';
 
   // document ready
@@ -9,7 +10,7 @@
 
   function main() {
 
-    const app = angular.module(application.config.name);
+    const app = angular.module('app');
 
     /**
      * service
@@ -67,11 +68,9 @@
 
     const envComponent = {
       controller: EnvController,
-      templateUrl: 'js/app/env/env.html',
-      // template: envTemplate,
+      template: `<pre>{{ $ctrl.env | stringify }}</pre>`,
     };
 
     app.component('env', envComponent);
   }
-
 })();

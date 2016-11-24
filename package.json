@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "bower install jquery bootstrap angular angular-ui-router"
+  },
+  "config": {
+    "bower_directory": "src/main/resources/static/vendors"
   },
   "repository": {
     "type": "git",
@@ -17,9 +20,8 @@
     "url": "https://github.com/daggerok/cf-app/issues"
   },
   "homepage": "https://github.com/daggerok/cf-app#readme",
-  "dependencies": {
-    "angular": "latest",
-    "bootstrap": "^3.3.7",
-    "jquery": "^3.1.1"
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "^1.8.0"
   }
 }
