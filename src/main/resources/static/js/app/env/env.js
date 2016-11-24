@@ -1,4 +1,7 @@
-(function app() {
+/**
+ * env module
+ */
+(function boot() {
   'use strict';
 
   // document ready
@@ -6,14 +9,10 @@
 
   function main() {
 
-    /**
-     * declare
-     */
-
-    const app = angular.module('app', []);
+    const app = angular.module(application.config.name);
 
     /**
-     * services
+     * service
      */
 
     const EnvModel = function EnvModel($http, $log) {
@@ -28,19 +27,26 @@
         }, $log.error);
       }
     };
+
     EnvModel.$inject = ['$http', '$log'];
+
     app.service('EnvModel', EnvModel);
 
     /**
-     * components
+     * filter
      */
 
-    // env
-    const envTemplate = `
-      <div>
-        {{ $ctrl.env }}
-      </div>
-    `;
+    const Stringify = function Stringify() {
+      return function StringifyFilter(input) {
+        return JSON.stringify(input, null, 1);
+      }
+    };
+
+    app.filter('stringify', Stringify);
+
+    /**
+     * controller
+     */
 
     const EnvController = function EnvController(EnvModel) {
       this.env = {};
@@ -52,23 +58,20 @@
         })
       }
     };
+
     EnvController.$inject = ['EnvModel'];
+
+    /**
+     * component
+     */
 
     const envComponent = {
       controller: EnvController,
-      template: envTemplate,
+      templateUrl: 'js/app/env/env.html',
+      // template: envTemplate,
     };
 
     app.component('env', envComponent);
-
-    /**
-     * boot app
-     */
-
-    angular.bootstrap(document, [app.name], {
-      strictDi: true, // instead of data-ng-strict-di=""
-      cloak: true, // instead of data-ng-cloak=""
-    });
   }
 
 })();

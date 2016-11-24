@@ -1,3 +1,18 @@
+server:
+  compression:
+    enabled: true
+    mime-types:
+      - application/javascript
+      - text/javascript vb
+      - application/json
+      - text/plain
+      - text/html
+      - text/xml
+      - text/css
 security:
   user:
     password: pwd
+  ignored: /css/*.css,/js/*.js
+spring:
+  resources:
+    cache-period: 60
