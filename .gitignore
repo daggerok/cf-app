@@ -26,6 +26,9 @@ gradlew*
 
 .mvn
 mvnw*
+.DS_Store
+gateway.zip
+
 target/
 vendors/
 node_modules/
